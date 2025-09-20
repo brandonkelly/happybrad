@@ -8,7 +8,7 @@ use craft\events\RegisterComponentTypesEvent;
 use craft\services\Dashboard;
 use yii\base\Event;
 
-class Plugin extends \craft\base\Plugin
+class Plugin extends \CraftCms\Cms\Plugin\Plugin
 {
     public function init(): void
     {
