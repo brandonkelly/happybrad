@@ -15,7 +15,7 @@ class Widget extends \craft\base\Widget
         return 'Happy Brad';
     }
 
-    public static function iconPath(): string
+    public static function icon(): string
     {
         return __DIR__ . '/icon-mask.svg';
     }
