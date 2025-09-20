@@ -8,7 +8,7 @@ use Craft;
 use craft\helpers\Html;
 use mattstauffer\happybrad\assets\widget\WidgetAsset;
 
-class Widget extends \craft\base\Widget
+class Widget extends \CraftCms\Cms\Dashboard\Widgets\Widget
 {
     public static function displayName(): string
     {
