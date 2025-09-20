@@ -10,15 +10,7 @@ use yii\base\Event;
 
 class Plugin extends \CraftCms\Cms\Plugin\Plugin
 {
-    public function init(): void
-    {
-        parent::init();
-
-        Event::on(
-            Dashboard::class,
-            Dashboard::EVENT_REGISTER_WIDGET_TYPES,
-            function (RegisterComponentTypesEvent $e) {
-                $e->types[] = Widget::class;
-            });
-    }
+    protected array $widgets = [
+        Widget::class,
+    ];
 }
