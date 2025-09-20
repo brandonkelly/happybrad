@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace mattstauffer\happybrad;
 
 use Craft;
+use craft\helpers\Html;
+use mattstauffer\happybrad\assets\widget\WidgetAsset;
 
 class Widget extends \craft\base\Widget
 {
-    protected string $omg_so_handsome = 'https://i.imgur.com/WbKwPij.jpg';
-
     public static function displayName(): string
     {
         return 'Happy Brad';
@@ -28,6 +28,10 @@ class Widget extends \craft\base\Widget
 CSS;
         Craft::$app->view->registerCss($css);
 
-        return '<img src="' . $this->omg_so_handsome . '" alt="OMG so handsome" width="100%">';
+        $bundle = Craft::$app->view->registerAssetBundle(WidgetAsset::class);
+        return Html::img("$bundle->baseUrl/happybrad.jpg", [
+            'alt' => 'OMG so handsome',
+            'style' => ['width' => '100%'],
+        ]);
     }
 }
