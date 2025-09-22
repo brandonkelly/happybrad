@@ -6,7 +6,6 @@ namespace mattstauffer\happybrad;
 
 use Craft;
 use craft\helpers\Html;
-use mattstauffer\happybrad\assets\widget\WidgetAsset;
 
 class Widget extends \CraftCms\Cms\Dashboard\Widgets\Widget
 {
@@ -22,9 +21,9 @@ class Widget extends \CraftCms\Cms\Dashboard\Widgets\Widget
 
     public function getBodyHtml(): ?string
     {
-        $bundle = Craft::$app->view->registerAssetBundle(WidgetAsset::class);
+        $imageUrl = Plugin::getInstance()->asset(Plugin::IMAGE_PATH);
 
-        return Html::img("$bundle->baseUrl/happybrad.jpg", [
+        return Html::img($imageUrl, [
             'alt' => 'OMG so handsome',
             'style' => ['width' => '100%'],
         ]);
